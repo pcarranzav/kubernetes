@@ -164,7 +164,7 @@ func (cm *containerManagerImpl) SystemContainersLimit() api.ResourceList {
 // Ensures that the Docker daemon is in the desired container.
 func ensureDockerInContainer(oomScoreAdj int, manager *fs.Manager) error {
 	// What container is Docker in?
-	out, err := exec.Command("pidof", "docker").Output()
+	out, err := exec.Command("pidof", "rce").Output()
 	if err != nil {
 		return fmt.Errorf("failed to find pid of Docker container: %v", err)
 	}
